@@ -1,7 +1,7 @@
-package controller
+package handler
 
 import (
-	"demo-go/handler"
+	"demo-go/errors"
 	"demo-go/service"
 	"github.com/gofiber/fiber/v2"
 	"net/http"
@@ -9,10 +9,10 @@ import (
 
 type BettingController struct {
 	bettingService *service.BettingService
-	errorHandler   *handler.ErrorHandler
+	errorHandler   *errors.ErrorHandler
 }
 
-func NewBettingController(service *service.BettingService, errorHandler *handler.ErrorHandler) *BettingController {
+func NewBettingController(service *service.BettingService, errorHandler *errors.ErrorHandler) *BettingController {
 	return &BettingController{
 		bettingService: service,
 		errorHandler:   errorHandler,
